@@ -2,11 +2,11 @@ package ru.yandex.practicum.delivery;
 
 public abstract class Parcel {
 
-    String description;
-    int weight;
-    String deliveryAddress;
-    int sendDay;
-    static int fixedDeliveryPrice;
+    protected final String description;
+    protected int weight;
+    protected String deliveryAddress;
+    protected int sendDay;
+
 
 
     public Parcel(String description, int weight, String deliveryAddress, int sendDay) {
@@ -26,8 +26,11 @@ public abstract class Parcel {
     }
 
     public int calculateDeliveryCost() {
-        return this.weight * fixedDeliveryPrice;
+        int price = getFixedDeliveryPrice();
+        return this.weight * price;
     }
+
+    public abstract int getFixedDeliveryPrice();
 
     @Override
     public String toString() {

@@ -15,6 +15,11 @@ public class PerishableParcel extends Parcel {
     }
 
     @Override
+    public int getFixedDeliveryPrice() {
+        return fixedDeliveryPrice;
+    }
+
+    @Override
     public String toString() {
         return "PerishableParcel{" +
                 "timeToLive=" + timeToLive +

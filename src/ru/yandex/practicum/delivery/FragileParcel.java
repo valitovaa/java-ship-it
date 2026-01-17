@@ -10,8 +10,13 @@ public class FragileParcel extends Parcel implements Trackable{
     @Override
     public void packageItem() {
         System.out.println("Посылка " + this.description + " обёрнута в защитную плёнку");
-        System.out.println("Посылка " + this.description + " упакована");
+        super.packageItem();
+        //спасибо, что сказал, как это делать!) А то я все время забываю и костыли придумываю
+    }
 
+    @Override
+    public int getFixedDeliveryPrice() {
+        return fixedDeliveryPrice;
     }
 
     @Override

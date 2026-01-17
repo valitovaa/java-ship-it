@@ -7,4 +7,9 @@ public class StandardParcel extends Parcel {
         super(description, weight, deliveryAddress, sendDay);
     }
 
+    @Override
+    public int getFixedDeliveryPrice() {
+        return fixedDeliveryPrice;
+    }
+
 }
